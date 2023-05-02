@@ -14,10 +14,15 @@ public class AppInitializer {
             Transaction transaction = session.beginTransaction();
             Laptop laptop1 = new Laptop();
             Laptop laptop2 = new Laptop();
-            laptop1.setBrand("lenovo");
-            laptop2.setBrand("Mac");
 
             Student student = new Student();
+
+            laptop1.setBrand("lenovo");
+            laptop1.setStudent(student);
+            laptop2.setBrand("Mac");
+            laptop2.setStudent(student);
+
+
             student.setStudentName("Nimal");
             student.setLaptop(Arrays.asList(laptop1,laptop2));
             session.save(student);

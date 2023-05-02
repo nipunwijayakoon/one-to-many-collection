@@ -12,12 +12,7 @@ public class Student {
     private long studentId;
     private String studentName;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "student_laptop_details",
-            joinColumns = @JoinColumn(name = "stu_id"),
-            inverseJoinColumns = @JoinColumn(name ="lap_id")
-    )
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
     private List<Laptop> laptops;
 
     public Student(long studentId, String studentName) {
