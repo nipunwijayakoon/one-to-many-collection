@@ -15,7 +15,6 @@ public class Student {
 
 
     @ManyToMany(mappedBy = "students")
-
     private List<Course> courses = new ArrayList<>();
 
 
